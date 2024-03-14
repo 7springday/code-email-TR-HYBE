@@ -2,6 +2,9 @@ function sendRecurringEmail () {
 
 
   var recipientEmails = "marc.a@trafalgar-releasing.com, marketing@trafalgar-releasing.com, sales@trafalgar-releasing.com, acquisitions@trafalgar-releasing.com, press@trafalgar-releasing.com";
+
+  var cc = "hxg@hybecorp.com, protect@bighitmusic.co.kr, community@bighitcorp.com, alice.d@trafalgar-releasing.com, kymberli.F@trafalgar-releasing.com, vince.j@trafalgar-releasing.com, mike.m@trafalgar-releasing.com, james.m@trafalgar-releasing.com, jamie.w@trafalgar-releasing.com, vanessa.h@trafalgar-releasing.com, marcel.k@trafalgar-releasing.com, emily.c@trafalgar-releasing.com, tracy.b@trafalgar-releasing.com, rodolfo.a@trafalgar-releasing.com, maggie.a@trafalgar-releasing.com, tara.b@trafalgar-releasing.com, ollie.b@trafalgar-releasing.com, federica.b@trafalgar-releasing.com, catherine.g@trafalgar-releasing.com, george.s@trafalgar-releasing.com, laura.h@trafalgar-releasing.com, neza.k@trafalgar-releasing.com, diogo.l@trafalgar-releasing.com,, clare.m@trafalgar-releasing.com, niallwlewis@gmail.com, nicola.l@trafalgar-releasing.com, niall.q@trafalgar-releasing.com, ashley.s@trafalgar-releasing.com, sam.t@trafalgar-releasing.com, iain@pleasetakenote.co.uk, helena@hybecorp.com, sb.tak@hybecorp.com, kaylie@hybecorp.com";
+
   var name = "YOUR NAME";
 
 
@@ -10,8 +13,6 @@ function sendRecurringEmail () {
     "Regarding 'D-DAY' THE MOVIE",
     "Urgent Matter: SUGA | Agust D movie screenings",
   ];
-
-  var cc = 'hxg@hybecorp.com, protect@bighitmusic.co.kr, community@bighitcorp.com, alice.d@trafalgar-releasing.com, kymberli.F@trafalgar-releasing.com, vince.j@trafalgar-releasing.com, mike.m@trafalgar-releasing.com, james.m@trafalgar-releasing.com, jamie.w@trafalgar-releasing.com, vanessa.h@trafalgar-releasing.com, marcel.k@trafalgar-releasing.com, emily.c@trafalgar-releasing.com, tracy.b@trafalgar-releasing.com, rodolfo.a@trafalgar-releasing.com, maggie.a@trafalgar-releasing.com, tara.b@trafalgar-releasing.com, ollie.b@trafalgar-releasing.com, federica.b@trafalgar-releasing.com, catherine.g@trafalgar-releasing.com, rose.h@trafalgar-releasing.com, laura.h@trafalgar-releasing.com, hanna.konopka@trafalgar-releasing.com, neza.k@trafalgar-releasing.com, diogo.l@trafalgar-releasing.com, hanna.konopka@trafalgar-releasing.com, clare.m@trafalgar-releasing.com, niallwlewis@gmail.com, nicola.l@trafalgar-releasing.com, niall.q@trafalgar-releasing.com, ashley.s@trafalgar-releasing.com, sam.t@trafalgar-releasing.com, iain@pleasetakenote.co.uk, helena@hybecorp.com, sb.tak@hybecorp.com, kaylie@hybecorp.com';
 
 
   var random_subjects = subjects[Math.floor(Math.random() * subjects.length)];
@@ -22,7 +23,7 @@ function sendRecurringEmail () {
 
   // Create and send the email
   GmailApp.sendEmail(recipientEmails, random_subjects, body, {
-    htmlBody: body
+    htmlBody: body, cc
   });
   // Log the sent email in the Apps Script log
   Logger.log("Email sent to " + recipientEmails);
